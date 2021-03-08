@@ -77,25 +77,25 @@ layout: default
 ![コントロールパネル](img/controlpanel.png "コントロールパネル")<br><br>
 
 2. 「コントロールパネル」⇒「システムとセキュリティ」⇒「電源オプション」⇒「電源ボタンの動作の変更」を選択します。<br>
-![電源ボタン動作の変更の選択](img/selectPowerBehavior.png "電源ボタン動作の変更の選択")<br><br>
+![電源ボタン動作の変更の選択](img/ubuntu/selectPwrBtnBehavior.png "電源ボタン動作の変更の選択")<br><br>
 
 3. "現在利用可能ではない設定を変更します"をクリックし、「シャットダウン設定」の「高速スタートアップを有効にする」のチェックを外してください。
-![現在利用可能でない設定を変更します](img/.png "現在利用可能でない設定を変更します")<br>
-![高速スタートアップを有効にする](img/.png "高速スタートアップを無効化")<br><br>
+![現在利用可能でない設定を変更します](img/ubuntu/enableH-speedStartup.png "現在利用可能でない設定を変更します")<br>
+![高速スタートアップを有効にする](img/ubuntu/disableH-speedStartup.png "高速スタートアップを無効化")<br><br>
 
 <a id="setPartition4Win" name="setPartition4Win"></a>
 ## パーティションの未割り当て領域の設定
 1. 「コントロールパネル」⇒「システムとセキュリティ」⇒「管理ツール」⇒「ハードディスク パーティションの作成とフォーマット」を選択します。<br>
-![ハードディスクパーティションの作成とフォーマット](img/.png "ハードディスクパーティションの作成とフォーマットの選択")<br><br>
+![ハードディスクパーティションの作成とフォーマット](img/ubuntu/createPartition.png "ハードディスクパーティションの作成とフォーマットの選択")<br><br>
 
 2. "Windows (C:)"を選択し右クリックし、"ボリュームの縮小"を選択します。<br>
-![ディスク管理画面](img/.png "ディスク管理画面")<br>
-![ボリュームの縮小](img/.png "ボリュームの縮小")<br><br>
+![ディスク管理画面](img/ubuntu/diskManagement.png "ディスク管理画面")<br>
+![ボリュームの縮小](img/ubuntu/shrinkDiskspace.png "ボリュームの縮小")<br><br>
 
 3. "縮小する領域のサイズ" に40960 (MB) と入力し「縮小」ボタンを押下します。未割り当て領域が作成されていれば完了となります。<br>
-![縮小する領域のサイズを変更](img/.png "縮小する領域のサイズを変更")<br>
-![領域サイズを縮小](img/.png "領域サイズを縮小")<br>
-![未割り当て領域の作成](img/.png "未割り当て領域の作成")<br><br>
+![縮小する領域のサイズを変更](img/ubuntu/befShrinkingDiskspace.png "縮小する領域のサイズを変更")<br>
+![領域サイズを縮小](img/ubuntu/aftShrinkingDiskspace.png "領域サイズを縮小")<br>
+![未割り当て領域の作成](img/ubuntu/creatingUnallocatedSpace.png "未割り当て領域の作成")<br><br>
 
 <a id="setBios" name="setBios"></a>
 ## BIOSの設定
@@ -113,14 +113,21 @@ layout: default
 3. 保存のキーを押下すると、"Exit Saving Changes?" と聞かれるので、"Yes" を選択し再起動します。<br>
 
 4. USBのインストーラが起動するので、"Try Ubuntu without installing" を選択しUbuntuを起動します。<br>
+![Ubuntuインストーラ](img/ubuntu/ubtInstaller.png "Ubuntuインストーラ")<br>
 
 <a id="setPartition4Ubn" name="setPartition4Ubn"></a>
 ## パーティション構成の設定
 1. インストーラのUbuntuが起動したら、左端にランチャーが表示されるので、左下の「アプリケーションを表示する」をクリックします。<br>
+![Ubuntuデスクトップ画面](img/ubuntu/ubtDesktop.png "Ubuntuデスクトップ画面")<br>
+![アプリケーション表示画面](img/ubuntu/appList.png "アプリケーション表示画面")<br>
 
 2. 検索欄に "gparted" と入力すると "GParted パーティション編集ツール"が表示されるのでクリックし起動します。<br>
+![gparted](img/ubuntu/partitionEditingTool.png "gparted")<br>
+![gparted画面](img/ubuntu/gparted.png "gparted画面")<br>
 
 3. 未割り当てのパーティションを選択し、「パーティション」⇒「新規」(またはファイルアイコン)を選択します。新規パーティションの作成で、以下の通り設定したら「追加」ボタンを押下します。<br>
+![未割り当て領域選択](img/ubuntu/selectUnallocatedSpace.png "未割り当て領域選択")<br>
+![新規パーティション作成画面](img/ubuntu/createEspPartition.png "新規パーティション作成画面")<br>
 
 <table border="1">
     <tr>
@@ -148,22 +155,35 @@ layout: default
 4. 新しくパーティションを作成したら、「編集」⇒「保留中の全ての操作を適用する」(またはチェックアイコン)を選択します。<br>
 作成したパーティション：ESPを選択し、「パーティション」⇒「フラグを編集」(または右クリックから"フラグを編集")を選択します。<br>
 チェックダイアログが表示されるので、"boot" と "esp"にチェックを入れ「閉じる」を押下します。<br>
+![新規パーティションの反映](img/ubuntu/reflectEspPartition.png "新規パーティションの反映")<br>
+![フラグの変更](img/ubuntu/chgEspPartitionFlg.png "フラグの変更")<br>
+![フラグの編集](img/ubuntu/editEspPartitionFlg.png "フラグの編集")<br>
 
 <a id="installUbuntu" name="installUbuntu"></a>
 ## Ubuntu 18.04 LTSのインストール
 1. Ubuntuのインストールと同時にソフトウェアのインストールを行うのでネットワークに接続しておきます。<br>
 
 2. デスクトップ上に「Ubuntu 18.04 LTSのインストール」があるので、ダブルクリックし起動します。起動したら「ようこそ」画面が表示されるので、"日本語" を選択し「続ける」ボタンを押下します。<br>
+![Ubuntu のインストーラ起動](img/ubuntu/launchUbtInstaller.png "Ubuntu のインストーラ起動")<br>
+![言語選択画面](img/ubuntu/selectUbtLang.png "言語選択画面")<br>
 
 3. 次に「キーボードレイアウト」が表示されるので、"日本語"を選択し「続ける」ボタンを押下します。<br>
+![キーボードレイアウト選択画面](img/ubuntu/selectUbtKeyboard.png "キーボードレイアウト選択画面")<br>
 
 4. 次に「アップデートと他のソフトウェア」が表示されるので、"通常のインストール"、"その他オプション"2項目にチェックを入れ、"Configure Secure Boot"のチェックを外し、「続ける」ボタンを押下します。<br>
+![インストールソフトウェア選択画面（選択前）](img/ubuntu/befSelectUbtInstSoftware.png "インストールソフトウェア選択画面（選択前）")<br>
+![インストールソフトウェア選択画面（選択後）](img/ubuntu/aftSelectUbtInstSoftware.png "インストールソフトウェア選択画面（選択後）")<br>
 
 5. 「インストールの種類」が表示されたら、"それ以外"を選択し「続ける」を押下します。<br>
+![インストールの種類選択画面（選択前）](img/ubuntu/befSelectInstType.png "インストールの種類選択画面（選択前）")<br>
+![インストールの種類選択画面（選択後）](img/ubuntu/aftSelectInstType.png "インストールの種類選択画面（選択後）")<br>
 
 6. 空き領域を選択し、「+」ボタンを押下するとパーティション編集ダイアログが表示されるので、下表の通りパーティションを設定します。<br>
 ※1 WindowsとUbuntuのデュアルブートを行う場合、「変更」ボタンからマウントポイントの設定を"/windows"とすることでUbuntuからWindowsにアクセス可能。UbuntuからWindowsにアクセスしない場合、設定は不要となります。<br>
 ※2 どのパーティションがWindowsのドライブかはパーティションサイズで判断します。<br>
+![パーティションの設定画面](img/ubuntu/editPartition.png "パーティションの設定画面")<br>
+![パーティションの割り当て](img/ubuntu/partitionAllocation.png "パーティションの割り当て")<br>
+![パーティションの作成](img/ubuntu/createNewPartition.png "パーティションの作成")<br>
 
 <table border="1">
     <tr>
@@ -211,17 +231,24 @@ layout: default
 </table><br><br>
 
 7. 設定が完了したら、「インストール」ボタンを押下します。<br>
+![インストールボタンの押下](img/ubuntu/clickInstBtn.png "インストールボタンの押下")<br>
 
 8. 「続ける」ボタンを押下します。<br>
+![ディスク書き込み確認画面](img/ubuntu/diskWriteConfirm.png "ディスク書き込み確認画面")<br>
 
 9. 「どこに住んでいますか？」が表示されたら、"Tokyo"と入力し「続ける」ボタンを押下します。<br>
+![居住地入力画面](img/ubuntu/enterUrPlaceResidence.png "居住地入力画面")<br>
 
 10. 「あなたの情報を入力してください」が表示されたら、全項目入力し「続ける」ボタンを押下します。<br>
 注 : インストール時はパスワードの設定が英数字のみの構成でも問題ないです。ただし、インストール後に変更を行う場合、大文字、小文字、英数字、記号の組み合わせでないと変更を行えません。<br>
+![ユーザ情報入力画面（入力前）](img/ubuntu/befEnterUserInfo.png "ユーザ情報入力画面（入力前）")<br>
+![ユーザ情報入力画面（入力後）](img/ubuntu/aftEnterUserInfo.png "ユーザ情報入力画面（入力後）")<br>
 
 11. 下図の画面が表示されたら、「インストール完了」画面が表示されるまで待機します。<br>
+![インストール中の画面](img/ubuntu/duringInstUbt.png "インストール中の画面")<br>
 
 12. 「インストールが完了しました」が表示されたら、「今すぐ再起動する」ボタンを押下します。<br>
+![再起動画面](img/ubuntu/rebootUbt.png "再起動画面")<br>
 
 <a id="changeBios" name="changeBios"></a>
 ## BIOSの設定を戻す
